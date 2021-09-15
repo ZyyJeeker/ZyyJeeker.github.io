@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Zyy">
+    
+    <title>
+        
+            2021.9.6 |
+        
+        Zyy&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/hatLogo.jpg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar1.svg","favicon":"/images/hatLogo.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/onepiece.jpg","description":null},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Zyy&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">2021.9.6</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar1.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Zyy</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-09-15 21:28:23
+    </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <hr>
+<hr>
+<h3 id="Docker常用容器启动命令"><a href="#Docker常用容器启动命令" class="headerlink" title="Docker常用容器启动命令"></a>Docker常用容器启动命令</h3><ul>
+<li><strong>docker容器：portainer 启动命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name portainer01 -p 8088:9000  --restart=always </span><br><span class="line">-v /var/run/docker.sock:/var/run/docker.sock --privileged=<span class="literal">true</span> portainer/portainer</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>docker容器：elasticsearch 启动命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 9200是用户交互端口 9300是集群心跳端口</span></span><br><span class="line"><span class="comment"># -e指定是单阶段运行</span></span><br><span class="line"><span class="comment"># -e指定占用的内存大小，生产时可以设置32G</span></span><br><span class="line">docker run --privileged=<span class="literal">true</span> --name elasticsearch01 -p 9200:9200 -p 9300:9300 \</span><br><span class="line">-e  <span class="string">&quot;discovery.type=single-node&quot;</span> \</span><br><span class="line">-e ES_JAVA_OPTS=<span class="string">&quot;-Xms64m -Xmx512m&quot;</span> \</span><br><span class="line">-v /home/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml \</span><br><span class="line">-v /home/elasticsearch/data:/usr/share/elasticsearch/data \</span><br><span class="line">-v  /home/elasticsearch/plugins:/usr/share/elasticsearch/plugins \</span><br><span class="line">-d elasticsearch:7.6.2 </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置开机启动elasticsearch</span></span><br><span class="line">docker update elasticsearch --restart=always</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>docker容器：kibana 启动命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># kibana指定了了ES交互端口9200  # 5600位kibana主页端口</span></span><br><span class="line">docker run --name kibana01 -e ELASTICSEARCH_HOSTS=http://123.56.26.101:9200 -p 5601:5601 -d kibana:7.6.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置开机启动kibana</span></span><br><span class="line">docker update kibana  --restart=always</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><strong>docker容器：mysql 启动命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d </span><br><span class="line">-v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql01 mysql</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run --privileged=<span class="literal">true</span> --name mysqlGL -p 3310:3306 </span><br><span class="line">-v /home/mysql/datadir:/var/lib/mysql </span><br><span class="line">-v /home/mysql/conf.d:/etc/mysql/conf.d </span><br><span class="line">-v /home/mysql/my.cnf:/etc/mysql/my.cnf -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><strong>docker容器：nginx 启动命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 80:80 --name nginx01 \</span><br><span class="line"> -v /home/nginx/html:/usr/share/nginx/html \</span><br><span class="line"> -v /home/nginx/logs:/var/<span class="built_in">log</span>/nginx \</span><br><span class="line"> -v /home/nginx/conf/:/etc/nginx \</span><br><span class="line"> -d nginx</span><br><span class="line"> </span><br><span class="line"> <span class="comment">##设置开机启动nginx</span></span><br><span class="line"> docker update nginx --restart=always</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>docker容器：nacos 启动命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8848:8848 -e MODE=standalone -v /home/nacos/logs:/home/nacos/logs -v /home/nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties --network=host --restart=always --name nacos01 nacos/nacos-server</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>docker容器：redis 启动命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动redis</span></span><br><span class="line">docker run -p 6379:6379 --name myredis -v /usr/<span class="built_in">local</span>/docker/redis.conf:/etc/redis/redis.conf -v /usr/<span class="built_in">local</span>/docker/data:/data -d redis redis-server /etc/redis/redis.conf --appendonly yes</span><br><span class="line"><span class="comment"># 进入redis</span></span><br><span class="line">docker <span class="built_in">exec</span> -it redis-test /bin/bash</span><br><span class="line"><span class="comment"># 使用redis服务</span></span><br><span class="line">redis-cli</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建redis集群</span></span><br><span class="line"><span class="comment"># 第一步：创建三个redis容器</span></span><br><span class="line">docker create --name redis-node1 -v /usr/<span class="built_in">local</span>/docker/data/node1:/data -p 6379:6379 redis --cluster-enabled yes --cluster-config-file nodes-node-1.conf</span><br><span class="line">docker create --name redis-node2 -v /usr/<span class="built_in">local</span>/docker/data/node2:/data -p 6380:6379 redis --cluster-enabled yes --cluster-config-file nodes-node-2.conf</span><br><span class="line">docker create --name redis-node3 -v /usr/<span class="built_in">local</span>/docker/data/node3:/data -p 6381:6379 redis --cluster-enabled yes --cluster-config-file nodes-node-3.conf</span><br><span class="line"><span class="comment"># 第二部：启动容器</span></span><br><span class="line">docker start redis-node1 redis-node2 redis-node3</span><br><span class="line"><span class="comment"># 第三步：组建集群</span></span><br><span class="line"><span class="comment"># 查看3个Redis在Docker中分配的ip结点信息：</span></span><br><span class="line">docker inspect redis-node1   	<span class="comment"># 得到redis-node1从机IP：172.17.0.4</span></span><br><span class="line">docker inspect redis-node2   	<span class="comment"># 得到redis-node2从机IP：172.17.0.5</span></span><br><span class="line">docker inspect redis-node3   	<span class="comment"># 得到redis-node3从机IP：172.17.0.6</span></span><br><span class="line"><span class="comment"># 这里以进入 myredis 为例</span></span><br><span class="line">docker <span class="built_in">exec</span> -it redis-node1 /bin/bash</span><br><span class="line"><span class="comment"># 接着执行组建集群命令</span></span><br><span class="line">redis-cli --cluster create 172.17.0.4:6379  172.17.0.5:6379  172.17.0.6:6379 --cluster-replicas 0</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="自制Docker镜像"><a href="#自制Docker镜像" class="headerlink" title="自制Docker镜像"></a>自制Docker镜像</h3><ul>
+<li><p>第一步：构建文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@zhangyu mytomcatimage]<span class="comment"># ls</span></span><br><span class="line">apache-tomcat-9.0.50.tar.gz  jdk-8u301-linux-x64.tar.gz  readme.txt</span><br></pre></td></tr></table></figure></li>
+<li><p>第二步：写Dockerfile命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim Dockerfile</span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">FROM centos</span><br><span class="line"></span><br><span class="line">MAINTAINER zhangyu&lt;990304979@qq.com&gt;</span><br><span class="line"></span><br><span class="line">COPY readme.txt /usr/<span class="built_in">local</span>/readme.tet</span><br><span class="line"></span><br><span class="line">ADD jdk-8u301-linux-x64.tar.gz /usr/<span class="built_in">local</span>/</span><br><span class="line">ADD apache-tomcat-9.0.50.tar.gz /usr/<span class="built_in">local</span>/</span><br><span class="line"></span><br><span class="line">RUN yum -y install vim</span><br><span class="line"></span><br><span class="line">ENV MYPATH /usr/<span class="built_in">local</span></span><br><span class="line">WORKDIR <span class="variable">$MYPATH</span></span><br><span class="line"></span><br><span class="line">ENV JAVA_HOME /usr/<span class="built_in">local</span>/jdk1.8.0_301</span><br><span class="line">ENV CLASSPATH <span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</span><br><span class="line">ENV CATALINA_HOME /usr/<span class="built_in">local</span>/apache-tomcat-9.0.50</span><br><span class="line">ENV CATALINA_BASH /usr/<span class="built_in">local</span>/apache-tomcat-9.0.50</span><br><span class="line">ENV PATH <span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$CATALINA_HOME</span>/lib:<span class="variable">$CATALINA_HOME</span>/bin</span><br><span class="line"></span><br><span class="line">EXPOSE 8080</span><br><span class="line"> </span><br><span class="line">CMD /usr/<span class="built_in">local</span>/apache-tomcat-9.0.50/bin/startup.sh &amp;&amp; tail -F /url/<span class="built_in">local</span>/apache-tomcat-9.0.50/bin/logs/catalina.out</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第三步：构建镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t divtomcat .</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第四步：运行镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8080:8080 --name diytomcat01 -v /home/zhangyu/build/tomcat/<span class="built_in">test</span>:/usr/<span class="built_in">local</span>/apache-tomcat-9.0.50/webapps/<span class="built_in">test</span> -v /home/zhangyu/build/tomcat/tomcatlogs/:/usr/<span class="built_in">local</span>/apache-tomcat-9.0.50/logs divtomcat</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第五步：发布镜像到docketHub</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 登录dockerHub</span></span><br><span class="line">docker login -u zhangyudaxia</span><br><span class="line">Password: </span><br><span class="line"><span class="comment"># 给要发布的镜像加标签（标签必须是dockerHub的账号）</span></span><br><span class="line">docker tag divtomcat:latest zhangyudaxia/divtomcat:latest</span><br><span class="line"><span class="comment"># 发布镜像</span></span><br><span class="line">docker push zhangyudaxia/diytomcat:latest</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>发布到阿里云镜像仓库</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 登录阿里云Docker Registry</span></span><br><span class="line">docker login --username=zhangyu990304@163.com registry.cn-beijing.aliyuncs.com</span><br><span class="line"><span class="comment"># 从Registry中拉取镜像</span></span><br><span class="line">docker pull registry.cn-beijing.aliyuncs.com/zhangyu-house/test1:[镜像版本号]</span><br><span class="line"><span class="comment"># 将镜像推送到Registry</span></span><br><span class="line">docker login --username=zhangyu990304@163.com registry.cn-beijing.aliyuncs.com</span><br><span class="line">docker tag [ImageId] registry.cn-beijing.aliyuncs.com/zhangyu-house/test1:[镜像版本号]</span><br><span class="line">docker push registry.cn-beijing.aliyuncs.com/zhangyu-house/test1:[镜像版本号]</span><br><span class="line"><span class="comment"># 用&quot;docker tag&quot;命令重命名镜像，并将它通过专有网络地址推送至Registry</span></span><br><span class="line">docker images</span><br><span class="line">REPOSITORY                                                         TAG                 IMAGE ID            CREATED             VIRTUAL SIZE</span><br><span class="line">registry.aliyuncs.com/acs/agent                                    0.7-dfb6816         37bb9c63c8b2        7 days ago          37.89 MB</span><br><span class="line">docker tag 37bb9c63c8b2 registry-vpc.cn-beijing.aliyuncs.com/acs/agent:0.7-dfb6816</span><br><span class="line"><span class="comment"># 使用 &quot;docker push&quot; 命令将该镜像推送至远程</span></span><br><span class="line">docker push registry-vpc.cn-beijing.aliyuncs.com/acs/agent:0.7-dfb6816</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Zyy</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>
